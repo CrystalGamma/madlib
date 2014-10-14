@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head><title>Mad Lib Thriller Title Generator</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script>//<[CDATA[
+(function(){
+var name = ["Parsifal", "Janson"];
+var mythology = ["Hades", "Prometheus", "Thanatos", "Dryad", "God", "Goddess"];
+var greekletter = ["Alpha", "Beta", "Gamma", "Sigma", "Omega"];
+var property = ["Skyward", "Nether", "Submarine", "Theoretical", "Dark", "Black", "Crimson", "Blood", "Buried", "Hidden", "Secret", "Cryptographic", "Last", "Final", "Dead"];
+
+var job = ["Exterminator", "Terminator", "Destroyer", "Killer", "Assassin", "Master"];
+var person = ["Hero", "Idol"];
+var object = ["Armor", "Shield", "Keystone"];
+var cryptography = ["Key", "Cypher", "Cipher"];
+var event = ["Event", "Night", "Fall", "Nightfall", "Case", "Death", "Assault", "Incident"];
+
+var documents = ["Document", "Protocol", "Directive", "Memorandum", "Tractate", "List", "Enumeration", "Signature", "Code", "Codex", "File", "Library", "Table", "Figure"];
+var plan = ["Conspiracy", "Agenda", "Algorithm", "Paradigm", "Plan", "Masterplan", "Timeline"];
+var thought = ["Thought", "Idea", "Theory", "Conjecture"];
+var limit = ["Limit", "Limitation", "Restriction", "Clearance", "Border", "Zone", "Dead-Zone", "Fringe", "Definition"];
+var rule = ["Rule", "Law", "Regulation"];
+var relation = ["Relation", "Connection", "Cartel", "Deal", "Allliance", "Covenant"];
+var reveal = ["Reveal", "Revelation", "Discovery", "Declassification"];
+var weapon = ["Sword", "Dagger", "Lance", "Rifle"];
+var objectEnd = ["Treasure", "Suit", "Pipeline"];
+var architecture = ["Arc", "Dome", "Cathedral"];
+var personEnd = ["Man", "Woman", "Girl", "Boy"];
+
+var secondPart = Array.concat(name, greekletter, property, job, mythology, person, object, cryptography, event);
+console.log("second part: " + secondPart.length + " options");
+var thirdPart = Array.concat(documents, plan, thought, limit, rule, relation, reveal, weapon, job, event, object, person, objectEnd, personEnd, cryptography);
+console.log("third part: " + thirdPart.length + " options");
+console.log("=> total: " + secondPart.length*thirdPart.length + " combinations");
+
+var generateOne = function() {
+	return "The " + secondPart[parseInt(Math.random()*secondPart.length)] + " " + thirdPart[parseInt(Math.random()*thirdPart.length)];
+};
+
+window.generate = function() {
+	var titles = document.createElement("ul");
+	titles.id = "titles";
+	for (var i = 0; i < 20; i++) {
+		var li = document.createElement("li");
+		li.textContent = generateOne();
+		titles.appendChild(li);
+	}
+	var oldTitles = document.getElementById('titles');
+	oldTitles.parentNode.replaceChild(titles, oldTitles);
+};
+})();
+//]]></script>
+</head>
+<body>
+<h1>Mad Lib Thriller Title Generator</h1>
+<button onclick="generate();">Generate</button>
+<pre id="titles"></pre>
+</body>
+</html>
