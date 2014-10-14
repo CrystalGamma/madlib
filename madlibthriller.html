@@ -4,16 +4,18 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <script>//<[CDATA[
 (function(){
-var name = ["Parsifal", "Janson"];
-var mythology = ["Hades", "Prometheus", "Thanatos", "Dryad", "God", "Goddess"];
-var greekletter = ["Alpha", "Beta", "Gamma", "Sigma", "Omega"];
-var property = ["Skyward", "Nether", "Submarine", "Theoretical", "Dark", "Black", "Crimson", "Blood", "Buried", "Hidden", "Secret", "Cryptographic", "Last", "Final", "Dead"];
+var name = ["Parsifal", "Janson", "Ludlum", "Wagner", "Mozart"];
+var mythology = ["Hades", "Pluto", "Prometheus", "Promethean", "Thanatos", "Zeus", "Jupiter", "Jovian", "Kronos", "Chronos", "Saturn", "Juno", "Io", "Europa", "Uranus", "Dryad",
+		"Moses", "Adam", "Eve", "Seth", "Saul", "David", "Goliath"];
+var greekletter = ["Alpha", "Beta", "Gamma", "Delta", "Epsilon", "Zeta", "Eta", "Theta", "Iota", "Kappa", "Lambda", "Mu", "Nu", "Xi", "Omicron", "Pi", "Rho", "Sigma", "Tau", "Upsilon", "Phi", "Chi", "Psi", "Omega"];
+var property = ["Skyward", "Nether", "Submarine", "Underground", "Theoretical", "Dark", "Black", "Crimson", "Blood", "Buried", "Hidden", "Secret", "Cryptographic", "Last", "Final", "Dead", "Impossible", "Cryogenic", "Psychic", "Psionic"];
 
-var job = ["Exterminator", "Terminator", "Destroyer", "Killer", "Assassin", "Master"];
-var person = ["Hero", "Idol"];
-var object = ["Armor", "Shield", "Keystone"];
+var job = ["Exterminator", "Terminator", "Destroyer", "Killer", "Assassin", "Dealer"];
+var person = ["Hero", "Idol", "Muse", "Virgin", "Master", "Mistress", "Maverick", "Prodigy", "God", "Goddess"];
+var object = ["Armor", "Shield", "Keystone", "Card", "Repulsor", "Attractor"];
 var cryptography = ["Key", "Cypher", "Cipher"];
 var event = ["Event", "Night", "Fall", "Nightfall", "Case", "Death", "Assault", "Incident"];
+var phenomena = ["Control", "Freedom", "Liberty", "Fear", "Repulsion", "Attraction"];
 
 var documents = ["Document", "Protocol", "Directive", "Memorandum", "Tractate", "List", "Enumeration", "Signature", "Code", "Codex", "File", "Library", "Table", "Figure"];
 var plan = ["Conspiracy", "Agenda", "Algorithm", "Paradigm", "Plan", "Masterplan", "Timeline"];
@@ -21,15 +23,15 @@ var thought = ["Thought", "Idea", "Theory", "Conjecture"];
 var limit = ["Limit", "Limitation", "Restriction", "Clearance", "Border", "Zone", "Dead-Zone", "Fringe", "Definition"];
 var rule = ["Rule", "Law", "Regulation"];
 var relation = ["Relation", "Connection", "Cartel", "Deal", "Allliance", "Covenant"];
-var reveal = ["Reveal", "Revelation", "Discovery", "Declassification"];
+var reveal = ["Reveal", "Revelation", "Discovery", "Declassification", "Investigation", "Interrogation"];
 var weapon = ["Sword", "Dagger", "Lance", "Rifle"];
 var objectEnd = ["Treasure", "Suit", "Pipeline"];
 var architecture = ["Arc", "Dome", "Cathedral"];
 var personEnd = ["Man", "Woman", "Girl", "Boy"];
 
-var secondPart = Array.concat(name, greekletter, property, job, mythology, person, object, cryptography, event);
+var secondPart = Array.concat(name, greekletter, property, job, mythology, person, object, cryptography, event, phenomena);
 console.log("second part: " + secondPart.length + " options");
-var thirdPart = Array.concat(documents, plan, thought, limit, rule, relation, reveal, weapon, job, event, object, person, objectEnd, personEnd, cryptography);
+var thirdPart = Array.concat(documents, plan, thought, limit, rule, relation, reveal, weapon, job, event, object, person, objectEnd, personEnd, cryptography, phenomena);
 console.log("third part: " + thirdPart.length + " options");
 console.log("=> total: " + secondPart.length*thirdPart.length + " combinations");
 
@@ -54,6 +56,7 @@ window.generate = function() {
 <body>
 <h1>Mad Lib Thriller Title Generator</h1>
 <button onclick="generate();">Generate</button>
-<pre id="titles"></pre>
+<ul id="titles"></ul>
+<p><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/InteractiveResource" property="dct:title" rel="dct:type">Mad Lib Thriller Title Generator (v1)</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://jona-stubbe.de" property="cc:attributionName" rel="cc:attributionURL">CrystalGamma (Jona Stubbe)</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</p>
 </body>
 </html>
